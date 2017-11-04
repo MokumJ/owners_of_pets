@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-def pets
-  @pets = Pet.all
-end
+  def pets
+    @pets = Pet.all
+  end
 end
