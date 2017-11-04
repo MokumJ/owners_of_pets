@@ -3,5 +3,5 @@
 <p> Hello! </p>
 
 <% @owners.each do |owner| %>
-  <p><%= owner.name %></p>
+  <p><%= link_to owner.name, pets_path(@pets) %></p>   <!--missing the path-->
 <% end %>
