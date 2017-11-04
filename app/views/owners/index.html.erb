@@ -3,5 +3,7 @@
 <p> Hello! </p>
 
 <% @owners.each do |owner| %>
-  <p><%= owner.name %></p>
+  <p><%= link_to owner.name, owner_path(owner) %></p>
 <% end %>
+
+<%= link_to "[Add Owner]", new_owner_path %>
