@@ -5,7 +5,10 @@ def show
 end
 
 def new
-  @pet = Pet.new
+  owner = Owner.find(params[:owner_id])
+  @pet = owner.pets.build
+end
+
 end
 def create
   pet_params = params.require(:pet).permit(:name, :age, :img_url, :kind, :owner_id)
@@ -15,6 +18,4 @@ def create
   else
     render "new"
   end
-end
-
 end
