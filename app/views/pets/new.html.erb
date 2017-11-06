@@ -1,6 +1,6 @@
-<%= form_for @pet do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
+<%= form_for [@pet.owner, @pet] do |f| %>
+ <%= f.label :name %>
+ <%= f.text_field :name %>
 
 <%= f.label :age %>
 <%= f.number_field :age %>
@@ -10,8 +10,9 @@
 
 <%= f.label :kind %>
 <%= f.text_field :kind %>
-<%=f.label :owner_id%>
-<%=f.collectin_selection(:owner_id), Owner.all, :id, :name%>
+
+<%= f.label :owner_id %>
+ <%= f.collection_select(:owner, Owner.all, :id, :name) %>
 
 <%= f.submit "Create" %>
 <% end %>

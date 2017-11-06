@@ -1,14 +1,9 @@
 <h1>Pets of the Owner</h1>
-<% if @owner.pets.count != 0%>
   <%@owner.pets.each do |pet|%>
-
-
     <p><%=link_to pet.name, owner_pet_path(@owner, pet)%></p>
   <%end%>
-<% else %>
-  <p>Would you like to add pets?</p>
-  <%=link_to "[Add pets]", new_owner_pet_path(@owner)%>
+
+  <%=link_to "[Add pets]", new_owner_pet_path(@owner.pet)%>
 
 
-<%end%>
 <%=link_to "[Edit owner]", edit_owner_path(@owner.id)%>

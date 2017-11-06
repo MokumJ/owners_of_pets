@@ -1,5 +1,5 @@
-Pet.destroy_all
 Owner.destroy_all
+Pet.destroy_all
 
 
 
